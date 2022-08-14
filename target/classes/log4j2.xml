@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+	<Properties>
+		<Property name="basePath">./logs</Property><!-- Location of where the log file will be stored -->
+	</Properties>
+
+  <Appenders>
+  	<RollingFile name="File" fileName="${basePath}/prints.log" filePattern="${basePath}/prints-%d{yyyy-MM-dd}.log"> <!-- Print at file -->
+     	<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+      		<SizeBasedTriggeringPolicy size="500" />
+    </RollingFile>
+
+    <Console name="Console" target="SYSTEM_OUT"> <!-- Print at console -->
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+  </Appenders>
+  
+  <Loggers>
+    <Root level="trace"> <!-- level = "error", this will only log errors. level = "trace", this will log everything(Fatal/Error/Debug/Info) -->
+      <AppenderRef ref="File"/>
+    </Root>
+  </Loggers>
+</Configuration>
