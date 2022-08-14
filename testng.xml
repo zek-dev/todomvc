@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="">
+  <listeners> <!-- This will inform Maven that screenshot has to be taken if there is a failure and etc. -->
+	<listener class-name=""/>
+  </listeners>
+  
+  <test thread-count="5" name=""> <!-- Multiple these code if there are > 1 TC & give proper naming -->
+    <classes>
+      <class name=""/>
+      <class name=""/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
